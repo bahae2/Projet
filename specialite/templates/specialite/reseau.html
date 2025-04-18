@@ -1,0 +1,227 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spécialité Réseaux Informatiques</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+      /* Styles généraux */
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #0a192f, #1f2a48);
+        color: #e6edf3;
+      }
+
+      /* En-tête */
+      .header {
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        background: rgba(15, 23, 42, 0.9);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+      }
+      .logo-container {
+        display: flex;
+        align-items: center;
+      }
+      .logo-container img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+      .logo-text {
+        margin-left: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+      }
+
+      /* Conteneur principal */
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;
+        padding-top: 60px;
+      }
+
+      /* Section d’introduction */
+      .content-section {
+        text-align: center;
+        margin-top: 100px;
+      }
+      .content-section h1 {
+        transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+      }
+      .content-section h1:hover {
+        transform: scale(1.1);
+      }
+      .content-section p {
+        font-size: 30px;
+        font-weight: 500;
+      }
+
+      /* Sections des cartes */
+      .section {
+        background: rgba(33, 38, 45, 0.9);
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        margin-bottom: 15px;
+        color: #e6edf3;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        min-height: 200px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .section:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 10px 20px rgba(88, 166, 255, 0.7);
+      }
+
+      .section img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+
+      .text-content {
+        flex: 1;
+        font-size: 20px;
+      }
+
+      /* Vidéo */
+      .video-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+      video {
+        width: 60%;
+        min-width: 300px;
+        max-width: 800px;
+        border-radius: 10px;
+        box-shadow: 0 0 25px rgba(88, 166, 255, 0.8);
+      }
+
+      /* Pied de page */
+      .footer {
+        background: rgba(22, 27, 34, 0.9);
+        padding: 2rem 5%;
+        text-align: center;
+        margin-top: 4rem;
+        border-top: 1px solid rgba(88, 166, 255, 0.5);
+      }
+      .footer p {
+        color: #e6edf3;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo-container">
+        <img src="{% static 'specialite/images/logo.jpeg' %}" alt="Logo" />
+        <span class="logo-text">TechSphere</span>
+      </div>
+    </header>
+
+    <div class="content-section">
+      <h1>Explorez RS</h1>
+      <p>Découvrez RÉSEAU ET SYSTÈME DISTRIBUÉ</p>
+    </div>
+
+    <div class="container">
+      <!-- Image à gauche | Texte à droite -->
+      <section class="section">
+        <img src="{% static 'specialite/images/RS1.jpg' %}" alt="Réseau" />
+        <div class="text-content">
+          <h2>Introduction</h2>
+          <p>
+            Les réseaux informatiques jouent un rôle fondamental dans la
+            communication et l’échange de données entre divers systèmes.
+          </p>
+        </div>
+      </section>
+
+      <!-- Image à droite | Texte à gauche -->
+      <section class="section">
+        <div class="text-content">
+          <h2>Technologies Utilisées</h2>
+          <ul>
+            <li><strong>TCP/IP :</strong> Protocoles pour la communication.</li>
+            <li>
+              <strong>Wi-Fi et Ethernet :</strong> Connexion sans fil ou
+              filaire.
+            </li>
+            <li>
+              <strong>Cloud Computing :</strong> Accès à des ressources via
+              Internet.
+            </li>
+            <li><strong>5G et IoT :</strong> Connectivité avancée.</li>
+          </ul>
+        </div>
+        <img
+          src="{% static 'specialite/images/RS2.jpg' %}"
+          alt="Technologies"
+        />
+      </section>
+
+      <!-- Image à gauche | Texte à droite -->
+      <section class="section">
+        <img src="{% static 'specialite/images/RS3.jpg' %}" alt="Domaines" />
+        <div class="text-content">
+          <h2>Domaines d'Application</h2>
+          <p>
+            Utilisés en télécommunications, cybersécurité, industrie, domotique,
+            etc.
+          </p>
+        </div>
+      </section>
+
+      <!-- Image à droite | Texte à gauche -->
+      <section class="section">
+        <div class="text-content">
+          <h2>Importance des Réseaux Informatiques</h2>
+          <p>
+            Ils permettent l’échange d’informations et favorisent le
+            développement technologique.
+          </p>
+        </div>
+        <img
+          src="{% static 'specialite/images/RS4.jpg' %}"
+          alt="Importance des réseaux"
+        />
+      </section>
+
+      <!-- Vidéo -->
+      <div class="video-container">
+        <video controls>
+          <source
+            src="{% static 'specialite/videos/vedio4.mp4' %}"
+            type="video/mp4"
+          />
+          Votre navigateur ne supporte pas la vidéo.
+        </video>
+      </div>
+    </div>
+
+    <!-- Pied de page -->
+    <footer class="footer">
+      <p>
+        © 2025 TechSphere. Tous droits réservés. | Mentions légales | Politique
+        de confidentialité
+      </p>
+    </footer>
+  </body>
+</html>

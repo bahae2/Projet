@@ -1,0 +1,242 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>F3I - Fondements et Ingénierie de l'Information et de l'Image</title>
+
+    <!-- CSS Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+
+    <style>
+      :root {
+        --main-bg: #1c1f2e;
+        --secondary-bg: #2a2d3e;
+        --accent-color: #ffcc00;
+        --logo-color: #007bff;
+        --text-color: white;
+      }
+
+      body {
+        background: var(--main-bg);
+        color: var(--text-color);
+        font-family: "Arial", sans-serif;
+      }
+
+      /* HEADER */
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: var(--secondary-bg);
+        padding: 15px 30px;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+      }
+      .logo-container {
+        display: flex;
+        align-items: center;
+      }
+      .logo-container img {
+        width: 50px;
+        height: auto;
+      }
+      .logo-text {
+        margin-left: 15px;
+        font-size: 20px;
+        font-weight: bold;
+        color: var(--logo-color);
+      }
+
+      /* CONTENU */
+      .content-section {
+        margin-top: 100px;
+        text-align: center;
+        padding: 40px;
+      }
+      /* Animation du titre Explorez F3I */
+      .content-section h1 {
+        font-size: 42px;
+        font-weight: bold;
+        color: var(--accent-color);
+        transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+      }
+
+      .content-section h1:hover {
+        transform: scale(1.1);
+        color: white;
+      }
+
+      /* SECTIONS IMAGE + INFO */
+      .image-info-section {
+        margin: 30px 0;
+        padding: 20px;
+        background: var(--secondary-bg);
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      }
+
+      /* Effet au passage de la souris */
+      .image-info-section:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 6px 12px rgba(255, 204, 0, 0.6);
+      }
+
+      .image-info-section img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      /* Effet sur l’image au survol */
+      .image-info-section:hover img {
+        transform: rotate(2deg) scale(1.05);
+      }
+
+      .image-info-section h2 {
+        color: var(--accent-color);
+        font-size: 22px;
+        margin-bottom: 10px;
+        transition: color 0.3s ease-in-out;
+      }
+
+      /* Effet sur le texte au survol */
+      .image-info-section:hover h2 {
+        color: white;
+      }
+
+      /* VIDEO */
+      .video-container {
+        display: flex;
+        justify-content: center;
+        margin: 50px 0;
+      }
+      .video-container video {
+        width: 80%;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(255, 204, 0, 0.5);
+      }
+
+      /* FOOTER */
+      .footer {
+        background-color: var(--secondary-bg);
+        padding: 2rem;
+        text-align: center;
+        margin-top: 4rem;
+        border-top: 1px solid var(--accent-color);
+      }
+      .footer p {
+        color: var(--text-color);
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo-container">
+        <img src="{% static 'specialite/images/logo.jpeg' %}" alt="Logo" />
+        <span class="logo-text">TechSphere</span>
+      </div>
+    </header>
+
+    <div class="content-section">
+      <h1>Explorez F3I</h1>
+      <p>Découvrez l’ingénierie de l'information et de l'image.</p>
+    </div>
+
+    <div class="container">
+      <!-- Image 1 + Texte à droite -->
+      <div class="row image-info-section">
+        <div class="col-md-6">
+          <img
+            src="{% static 'specialite/images/F3I1.jpg' %}"
+            alt="F3I Introduction"
+          />
+        </div>
+        <div class="col-md-6">
+          <h2>Introduction à F3I</h2>
+          <p>
+            La spécialité F3I couvre les fondements du traitement de l’image,
+            l’ingénierie de l’information et l’intelligence artificielle.
+          </p>
+        </div>
+      </div>
+
+      <!-- Image 2 + Texte à gauche -->
+      <div class="row image-info-section">
+        <div class="col-md-6">
+          <h2>Traitement d'Image</h2>
+          <p>
+            Les techniques avancées de filtrage, segmentation et détection
+            d’objets permettent d’analyser des images avec précision.
+          </p>
+        </div>
+        <div class="col-md-6">
+          <img
+            src="{% static 'specialite/images/f3i2.jpg' %}"
+            alt="Traitement d'image"
+          />
+        </div>
+      </div>
+
+      <!-- Image 3 + Texte à droite -->
+      <div class="row image-info-section">
+        <div class="col-md-6">
+          <img
+            src="{% static 'specialite/images/f3i3.jpg' %}"
+            alt="Vision par Ordinateur"
+          />
+        </div>
+        <div class="col-md-6">
+          <h2>Vision par Ordinateur</h2>
+          <p>
+            La vision par ordinateur permet aux machines de comprendre et
+            d’analyser des images et vidéos en temps réel.
+          </p>
+        </div>
+      </div>
+
+      <!-- Image 4 + Texte à gauche -->
+      <div class="row image-info-section">
+        <div class="col-md-6">
+          <h2>Intelligence Artificielle</h2>
+          <p>
+            L’IA appliquée aux images et aux données permet des avancées
+            majeures dans le domaine médical, industriel et technologique.
+          </p>
+        </div>
+        <div class="col-md-6">
+          <img
+            src="{% static 'specialite/images/f3i4.jpg' %}"
+            alt="Intelligence Artificielle"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Vidéo (déplacée à la fin) -->
+    <div class="video-container">
+      <video controls>
+        <source
+          src="{% static 'specialite/videos/vedio3.mp4' %}"
+          type="video/mp4"
+        />
+        Votre navigateur ne supporte pas la lecture de vidéos.
+      </video>
+    </div>
+
+    <footer class="footer">
+      <p>© 2025 TechSphere. Tous droits réservés.</p>
+    </footer>
+  </body>
+</html>

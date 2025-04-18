@@ -1,0 +1,191 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ingénierie des Données et Technologies Web</title>
+    <style>
+      /* Importation de la police */
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+      /* Style global */
+      body {
+        background: linear-gradient(135deg, #1e3a5f, #274a78);
+        color: #e0ecff;
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+
+      /* En-tête */
+      .header {
+        display: flex;
+        align-items: center;
+        padding: 15px 50px;
+        background: rgba(15, 45, 80, 0.9);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 2px 15px rgba(74, 144, 226, 0.5);
+      }
+      .logo-container {
+        display: flex;
+        align-items: center;
+      }
+      .logo-container img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+      }
+      .logo-text {
+        margin-left: 10px;
+        font-size: 24px;
+        font-weight: bold;
+        color: #a3d5ff;
+      }
+
+      /* Conteneur principal */
+      .container {
+        width: 90%;
+        max-width: 1100px;
+        margin: 120px auto 20px;
+        padding: 20px;
+        text-align: center;
+      }
+
+      /* Section avec image et texte */
+      .section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 40px;
+        background: rgba(25, 50, 85, 0.9);
+        padding: 30px;
+        border-radius: 10px;
+        transition: transform 0.3s, box-shadow 0.3s;
+        box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
+      }
+      .section:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 25px rgba(74, 144, 226, 0.7);
+      }
+      .section img {
+        width: 200px;
+        height: 200px;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+      .text {
+        flex: 1;
+        padding: 0 20px;
+        font-size: 18px;
+      }
+      h2 {
+        color: #a3d5ff;
+      }
+
+      /* Vidéo */
+      .video-container {
+        text-align: center;
+        margin-top: 50px;
+      }
+      .video-container video {
+        width: 90%;
+        max-width: 900px;
+        border-radius: 10px;
+        box-shadow: 0 0 25px rgba(74, 144, 226, 0.8);
+      }
+
+      /* Pied de page */
+      .footer {
+        background-color: rgba(15, 45, 80, 0.9);
+        padding: 2rem 5%;
+        text-align: center;
+        margin-top: 4rem;
+        border-top: 1px solid rgba(74, 144, 226, 0.3);
+      }
+
+      /* Gestion de la deuxième section (image à gauche, texte à droite) */
+      .section:nth-child(odd) {
+        flex-direction: row-reverse;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- En-tête -->
+    <header class="header">
+      <div class="logo-container">
+        <img src="{% static 'specialite/images/logo.jpeg' %}" alt="Logo" />
+        <span class="logo-text">TechSphere</span>
+      </div>
+    </header>
+
+    <!-- Contenu principal -->
+    <div class="container">
+      <h1>Ingénierie des Données & Technologies Web</h1>
+
+      <div class="section">
+        <img
+          src="{% static 'specialite/images/web3.jpg' %}"
+          alt="Data Analysis"
+        />
+        <div class="text">
+          <h2>Analyse des Données</h2>
+          <p>
+            Apprenez à traiter, analyser et visualiser les données avec Python
+            et SQL.
+          </p>
+        </div>
+      </div>
+
+      <!-- Ici, l'image sera placée à gauche grâce au CSS -->
+      <div class="section">
+        <img
+          src="{% static 'specialite/images/web2.jpg' %}"
+          alt="Développement Web"
+        />
+        <div class="text">
+          <h2>Développement Web</h2>
+          <p>
+            Maîtrisez Django et les technologies modernes pour créer des
+            applications performantes.
+          </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <img
+          src="{% static 'specialite/images/web1.jpg' %}"
+          alt="Cloud Computing"
+        />
+        <div class="text">
+          <h2>Cloud Computing</h2>
+          <p>
+            Découvrez comment déployer et gérer vos applications dans le cloud.
+          </p>
+        </div>
+      </div>
+
+      <!-- Vidéo -->
+      <div class="video-container">
+        <h2>Présentation de la spécialité</h2>
+        <video controls>
+          <source
+            src="{% static 'specialite/videos/vedio5.mp4' %}"
+            type="video/mp4"
+          />
+          Votre navigateur ne supporte pas la lecture de vidéos.
+        </video>
+      </div>
+    </div>
+
+    <!-- Pied de page -->
+    <footer class="footer">
+      <p>© 2025 Data & WebTech. Tous droits réservés.</p>
+    </footer>
+  </body>
+</html>

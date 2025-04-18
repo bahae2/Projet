@@ -1,0 +1,233 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sécurité Informatique</title>
+    <style>
+      /* Styles généraux */
+      body {
+        background: linear-gradient(135deg, #0a192f, #1f2a48);
+        color: #e6edf3;
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+      .container {
+        width: 90%;
+        max-width: 1100px;
+        margin: 120px auto 20px;
+        padding: 20px;
+        text-align: center;
+      }
+
+      /* Titre principal */
+      .animated-text {
+        font-size: 3em;
+        font-weight: bold;
+        color: #58a6ff;
+        text-transform: uppercase;
+        animation: fadeIn 3s ease-in-out, pulse 2s infinite alternate;
+      }
+
+      /* Animation */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes pulse {
+        from {
+          transform: scale(1);
+        }
+        to {
+          transform: scale(1.05);
+        }
+      }
+
+      /* Section alternée */
+      .section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 40px;
+        background: rgba(33, 38, 45, 0.9);
+        padding: 30px;
+        border-radius: 10px;
+        transition: transform 0.3s, box-shadow 0.3s;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+      }
+      .section:hover {
+        transform: scale(1.08);
+        box-shadow: 0 0 25px rgba(88, 166, 255, 0.7);
+      }
+
+      /* Images */
+      .section img {
+        width: 200px;
+        height: 200px;
+        border-radius: 10px;
+      }
+
+      /* Texte */
+      .text {
+        max-width: 60%;
+        text-align: left;
+      }
+
+      /* Inverser l'ordre (image à droite, texte à gauche) */
+      .section.reverse {
+        flex-direction: row-reverse;
+      }
+
+      /* Vidéo */
+      .video-container {
+        text-align: center;
+        margin-top: 50px;
+      }
+      .video-container video {
+        width: 90%;
+        max-width: 900px;
+        border-radius: 10px;
+        box-shadow: 0 0 25px rgba(88, 166, 255, 0.8);
+      }
+
+      /* Pied de page */
+      .footer {
+        background-color: rgba(22, 27, 34, 0.9);
+        padding: 2rem 5%;
+        text-align: center;
+        margin-top: 4rem;
+        border-top: 1px solid rgba(88, 166, 255, 0.5);
+      }
+      .footer p {
+        color: #e6edf3;
+        font-size: 0.9rem;
+      }
+      .header {
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        background: #0f172a;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+      }
+      .logo-container {
+        display: flex;
+        align-items: center;
+      }
+      .logo-container img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+      .logo-text {
+        margin-left: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo-container">
+        <img src="{% static 'specialite/images/logo.jpeg' %}" alt="Logo" />
+        <span class="logo-text">TechSphere</span>
+      </div>
+    </header>
+    <div class="container">
+      <h1 class="animated-text">Sécurité Informatique</h1>
+
+      <!-- Image 1 à gauche | Texte à droite -->
+      <div class="section">
+        <img
+          src="{% static 'specialite/images/sc1.jpg' %}"
+          alt="Sécurité des mots de passe"
+        />
+        <div class="text">
+          <h2>Protégez vos mots de passe</h2>
+          <p>
+            Utilisez des mots de passe complexes et uniques pour chaque service.
+            Activez l'authentification à deux facteurs.
+          </p>
+        </div>
+      </div>
+
+      <!-- Image 2 à droite | Texte à gauche -->
+      <div class="section reverse">
+        <img
+          src="{% static 'specialite/images/sc2.jpg' %}"
+          alt="Mises à jour"
+        />
+        <div class="text">
+          <h2>Gardez vos logiciels à jour</h2>
+          <p>
+            Les mises à jour corrigent les failles de sécurité et protègent vos
+            données contre les attaques.
+          </p>
+        </div>
+      </div>
+
+      <!-- Image 3 à gauche | Texte à droite -->
+      <div class="section">
+        <img
+          src="{% static 'specialite/images/sc3.jpg' %}"
+          alt="Attaques phishing"
+        />
+        <div class="text">
+          <h2>Méfiez-vous des emails suspects</h2>
+          <p>
+            Ne cliquez pas sur les liens d'emails inconnus et ne téléchargez pas
+            de pièces jointes douteuses.
+          </p>
+        </div>
+      </div>
+
+      <!-- Image 4 à droite | Texte à gauche -->
+      <div class="section reverse">
+        <img
+          src="{% static 'specialite/images/sc4.jpg' %}"
+          alt="Utilisation des VPN"
+        />
+        <div class="text">
+          <h2>Utilisez un VPN pour plus de confidentialité</h2>
+          <p>
+            Un VPN chiffre votre connexion Internet et protège vos données des
+            pirates.
+          </p>
+        </div>
+      </div>
+
+      <!-- Vidéo -->
+      <div class="video-container">
+        <h2>Vidéo explicative</h2>
+        <video controls>
+          <source
+            src="{% static 'specialite/videos/vedio2.mp4' %}"
+            type="video/mp4"
+          />
+          Votre navigateur ne supporte pas la lecture de vidéos.
+        </video>
+      </div>
+    </div>
+
+    <!-- Pied de page -->
+    <footer class="footer">
+      <p>
+        © 2025 TechSphere. Tous droits réservés. | Mentions légales | Politique
+        de confidentialité
+      </p>
+    </footer>
+  </body>
+</html>
