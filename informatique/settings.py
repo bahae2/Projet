@@ -129,6 +129,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'specialite/static'),
 ]
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # <- This is the folder where collectstatic will put all static files
+
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
